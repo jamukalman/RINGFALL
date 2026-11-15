@@ -1,0 +1,458 @@
+# RINGFALL
+## GAME DESIGN DOCUMENT (GDD)
+
+**Genre:** Multiplayer Action PvP  
+**Platform:** Steam (PC)  
+**Camera:** Third Person  
+**Theme:** Superhero / Supervillain  
+**Maximum Players:** 9  
+**Match Duration:** 10 Minutes  
+**Development Stage:** Initial Early Access Planning
+
+---
+
+# 1. GAME OVERVIEW
+
+RINGFALL, oyuncuların süper güçlü Villain karakterlerini kontrol ederek birbirleriyle veya insanlarla savaştığı, yıkılabilir çevre ve fizik tabanlı etkileşimler içeren bir Multiplayer PvP oyunudur.
+
+Oyunun temel oyun modunda maç başlangıcında rastgele bir oyuncu Villain olarak belirlenir. Bu oyuncu mevcut Villain karakterlerinden birini seçer. Diğer oyuncular ise insan tarafında yer alır.
+
+Villain'in amacı haritadaki bütün insanları öldürmektir. İnsanların amacı ise birlikte hareket ederek Villain'i öldürmek veya maç süresi bitene kadar hayatta kalmaktır.
+
+İnsan oyuncular haritada silahlar, zehirler ve yüzükler bulabilir. Özellikle yüzükler, insanlara Villain karakterlerinin küçük ve sınırlı özel güçlerini kazandırır.
+
+Oyunda ayrıca oyuncuların doğrudan birbirleriyle savaşabileceği Villain vs Villain oyun modu da bulunacaktır.
+
+RINGFALL'ın temel amacı arkadaşlarla oynanabilecek, kaotik, eğlenceli ve tekrar oynanabilir bir PvP deneyimi sunmaktır.
+
+# 2. CORE GAMEPLAY
+
+RINGFALL'ın temel oynanışı iki farklı taraf arasındaki güç mücadelesine dayanır.
+
+### Villain
+- Diğer bütün insan oyuncuları öldürmeye çalışır.
+- Seçtiği karakterin özel güçlerini kullanabilir.
+- İnsanların topladığı yüzükler ve ekipmanlarla mücadele eder.
+
+### Humans
+- Haritayı keşfederek ekipman toplar.
+- Silahlar, zehirler ve yüzükler kullanır.
+- Birlikte hareket ederek Villain'i öldürmeye çalışır.
+- Villain'i öldüremedikleri durumda maç süresi bitene kadar hayatta kalabilirler.
+
+Oyunun temelinde güçlü bir Villain'e karşı mücadele eden, sınırlı süper güçlere sahip insan oyuncular bulunur.
+
+# 3. MATCH FLOW (MAÇ AKIŞI)
+
+Temel oyun modunda maç akışı şu şekildedir:
+
+1. Oyuncular bir lobiye katılır.
+2. Maç başlangıcında rastgele bir oyuncu Villain olarak seçilir.
+3. Villain oyuncusu mevcut karakterlerden birini seçer.
+4. İnsan oyuncular haritaya iner.
+5. Villain 15 saniye boyunca gözleri kapalı şekilde bekler.
+6. İnsanlar bu süre içerisinde haritayı keşfeder ve silah, zehir, yüzük toplar.
+7. 15 saniyenin sonunda Villain aktif hale gelir.
+8. Villain insanları avlamaya başlar.
+9. İnsanlar ekipmanlarını ve yüzüklerden kazandıkları güçleri kullanarak Villain'e karşı savaşır.
+10. Taraflardan birinin kazanma koşulu gerçekleştiğinde maç sona erer.
+
+# 4. GAME MODES (OYUN MODLARI)
+
+RINGFALL iki ana oyun moduna sahip olacaktır.
+
+## 4.1. VILLAIN VS HUMANS
+
+Oyunun temel oyun modudur.
+
+Bir oyuncu Villain olurken diğer oyuncular insan tarafında yer alır.
+
+**Villain'in amacı:** Bütün insan oyuncuları öldürmek.
+
+**İnsanların amacı:** Villain'i öldürmek veya süre bitene kadar hayatta kalmak.
+
+Oyuncu dağılımı:
+- Minimum: 1 Villain + 1 Human
+- Maksimum: 1 Villain + 8 Humans
+
+Örnek maç düzenleri:
+- 1v1
+- 1v3
+- 1v5
+- 1v8
+
+## 4.2. VILLAIN VS VILLAIN
+
+Bu oyun modunda oyuncular doğrudan Villain karakterlerini seçerek birbirleriyle savaşabilir.
+
+Oyuncular karakterlerinin bütün özel güçlerini kullanabilir.
+
+Üç farklı oyun türü bulunacaktır:
+
+### Free For All (FFA)
+- Her oyuncu kendi başına savaşır.
+- Herkes birbirinin rakibidir.
+- Son hayatta kalan oyuncu kazanır.
+
+### Duel (1v1)
+- İki oyuncu karşı karşıya gelir.
+- Her oyuncu istediği Villain karakterini seçer.
+- Rakibini öldüren oyuncu kazanır.
+
+### Team Battle
+- Oyuncular iki takıma ayrılır.
+- Her takım kendi Villain karakterleriyle savaşır.
+- Rakip takımın bütün oyuncularını öldüren takım kazanır.
+
+# 5. MATCH RULES (MAÇ KURALLARI)
+
+## Match Duration
+Her maç maksimum 10 dakika sürer.
+
+- Maç başladığında 10 dakikalık geri sayım başlar.
+- İlk 15 saniye boyunca Villain beklerken insanlar haritaya iner ve ekipman toplar.
+- 15 saniyenin sonunda Villain aktif hale gelir.
+- Villain öldürülürse maç anında sona erer.
+- Bütün insanlar öldürülürse maç anında sona erer.
+- Süre bittiğinde en az bir insan hayattaysa insanlar kazanır.
+
+## Win Conditions
+
+**Humans Victory:**
+- Villain'in öldürülmesi.
+- Süre sona erdiğinde en az bir insanın hayatta kalması.
+
+**Villain Victory:**
+- Bütün insan oyuncuların öldürülmesi.
+
+## Death System
+- Ölen insanlar yeniden doğamaz.
+- Ölen oyuncu taşıdığı eşyaları yere düşürür.
+- Düşürülen eşyalar diğer oyuncular tarafından alınabilir.
+- Ölen oyuncu o maçta aktif olarak mücadele edemez.
+
+# 6. VILLAIN SYSTEM (KARAKTER SİSTEMİ)
+
+RINGFALL'ın başlangıç sürümünde 5 farklı Villain bulunması planlanmaktadır.
+
+Her Villain'in kendine özgü saldırıları, yetenekleri ve ulti gücü olacaktır.
+
+Her karakter toplam 4 özel güce sahiptir:
+
+- Q: Özel yetenek
+- E: Özel yetenek
+- C: Özel yetenek
+- X: Ultimate
+
+Bunlara ek olarak karakterlerin sol ve sağ tıklama ile kullanılan temel saldırı ve savunma mekanikleri bulunur.
+
+## 6.1. THOR
+
+**Karakter Tanımı:**
+
+Thor, yıldırım gücüne sahip bir yıldırım tanrısıdır. Ana silahı Mjolnir'dir. Hem yakın dövüşte hem de elektrik saldırılarında güçlüdür.
+
+### Basic Attacks
+
+**Sol Click: Mjolnir Strike**
+- Mjolnir ile rakibe vurur.
+- Sol tıklamaya basılı tutulduğunda Mjolnir ileri fırlatılır.
+- Mjolnir yaklaşık 3-4 metre ilerler ve ardından Thor'un eline geri döner.
+
+**Sağ Click: Guard**
+- Thor Mjolnir'i kullanarak gard alır.
+- Gelen saldırılara karşı savunma sağlar.
+
+### Special Abilities
+
+**Q — Thunder Slam**
+- Thor havaya zıplar.
+- Ardından yere doğru güçlü bir şekilde iner.
+- Yere çarptığında çevresindeki rakiplere alan hasarı verir.
+
+**E — Mjolnir Charge**
+- Thor Mjolnir ile birlikte ileri doğru güçlü bir şekilde koşar.
+- Yoluna çıkan rakiplere çarparak hasar verir.
+- Mjolnir elinde olmasa bile elektriklenerek ileri doğru koşabilir.
+
+**C — Electrified Mjolnir**
+- Thor Mjolnir'i elektrikle kaplar.
+- Elektriklendirilmiş Mjolnir ile vurduğu rakiplere ek elektrik hasarı verir.
+
+### Ultimate
+
+**X — God of Thunder**
+- Hava kararır ve gök gürlemeye başlar.
+- Thor 3 saniye boyunca uçar.
+- Oyuncu bu sırada belirlediği bölgelere yıldırımlar düşürebilir.
+- Yıldırımlar çok yüksek hasar verir.
+
+## 6.2. DETORAN
+
+**Karakter Tanımı:**
+
+Detoran, Venom benzeri, turuncu renkte simbiyotik bir uzaylıdır. Vücudunu ve uzuvlarını farklı şekillere dönüştürerek saldırabilir.
+
+### Basic Attacks
+
+**Sol Click: Symbiote Strike**
+- Detoran sırtından çıkardığı balçık uzantılarıyla rakibine saldırır.
+- Sol tıklamaya basılı tutulduğunda paintball mermilerine benzeyen turuncu balçıklar fırlatır.
+
+**Sağ Click: Symbiote Shield**
+- Detoran vücudundaki simbiyotik maddeleri kullanarak kalkan oluşturur.
+- Gelen saldırılara karşı savunma sağlar.
+
+### Special Abilities
+
+**Q — Symbiote Pull**
+- Detoran göğsünden bir balçık uzantısı çıkarır.
+- Uzantının temas ettiği rakip hafifçe Detoran'a doğru çekilir.
+- Temas ettiği rakibe hasar verir.
+
+**E — Hammer Fist**
+- Detoran elini büyük bir çekice dönüştürür.
+- Çekiç şeklindeki eliyle güçlü bir saldırı gerçekleştirir.
+
+**C — Symbiote Blade**
+- Detoran elini keskin bir kılıca dönüştürür.
+- Kılıçla yakın dövüş saldırısı gerçekleştirir.
+
+### Ultimate
+
+**X — Liquid Form**
+- Detoran sıvı formuna dönüşür.
+- Bu formdayken hareket hızı önemli ölçüde artar.
+- Bir rakibe temas ettiğinde vücuduyla rakibi sarar.
+- Sarılan rakip 3 saniye içerisinde öldürülür.
+
+## 6.3. FUTURE VILLAINS
+
+Başlangıç sürümünde toplam 5 Villain bulunması planlanmaktadır.
+
+İlk iki karakter Thor ve Detoran'dır. Diğer üç karakter henüz belirlenmemiştir.
+
+Gelecekte yeni Villain karakterleri eklenerek karakter çeşitliliğinin artırılması hedeflenmektedir.
+
+# 7. RING SYSTEM (YÜZÜK SİSTEMİ)
+
+Yüzükler RINGFALL'ın en önemli oynanış mekaniklerinden biridir.
+
+İnsan oyuncular haritada farklı yüzükler bulabilir. Bu yüzükler, oyuncuya belirli bir Villain'in küçük ve sınırlı bir özel gücünü kazandırır.
+
+Yüzükler insanları aşırı güçlü hale getirmek için tasarlanmamıştır. Amaç, Villain'e karşı mücadelede insanlara ek yetenekler sağlamaktır.
+
+### Example: Lightning Ring
+
+Bir oyuncu haritada mavi bir yüzük bulduğunda yıldırım fırlatma yeteneği kazanabilir.
+
+Ancak bu yetenek Thor'un yıldırım güçleri kadar kuvvetli değildir ve sınırlı kullanım hakkına sahiptir.
+
+Yüzüklerin çeşitleri, bulunma oranları, kullanım limitleri ve aynı anda takılabilecek yüzük sayısı henüz kesinleştirilmemiştir.
+
+# 8. WEAPONS & POISONS (SİLAHLAR VE ZEHİRLER)
+
+İnsan oyuncular haritada çeşitli silahlar ve zehirler bulabilir.
+
+### Weapons
+- Villain'e doğrudan hasar vermek amacıyla kullanılır.
+- Haritanın farklı bölgelerinde bulunabilir.
+- İnsanların Villain'e karşı savaşırken kullanabileceği temel ekipmanlardır.
+
+### Poisons
+- Villain üzerinde hasar oluşturabilir.
+- Küçük olumsuz etkiler yaratabilir.
+- İnsanların savaş sırasında kullanabileceği yardımcı ekipmanlardır.
+
+Silahlar ve zehirler yüzükler gibi süper güç kazandırmaz. Daha çok doğrudan hasar ve küçük etkiler üzerine kuruludur.
+
+# 9. MAPS & ENVIRONMENT (HARİTALAR VE ÇEVRE)
+
+RINGFALL'ın haritaları farklı atmosferlere, çevresel özelliklere ve savaş alanlarına sahip olacaktır.
+
+Başlangıç için planlanan haritalar:
+
+## 9.1. VALKOR
+
+<image-placeholder>Volkanik gezegen ve lavlarla çevrili savaş alanı</image-placeholder>
+
+- Volkanik bir bölgede yer alır.
+- Lavlar ve volkanik çevre unsurları bulunur.
+- Oyuncular volkanik bir atmosferde savaşır.
+- Harita, farklı yüksekliklere ve çevresel yapılara sahip olacaktır.
+
+## 9.2. NIHILUM
+
+<image-placeholder>Karanlık atmosferli gelişmiş uzay gezegeni</image-placeholder>
+
+- Uzayda bulunan gelişmiş bir gezegendir.
+- Karanlık ve bilim kurgu temalı bir atmosfere sahiptir.
+- Gelişmiş yapılar ve teknolojik çevre unsurları bulunur.
+- Oyuncular farklı gezegensel ve teknolojik ortamlarda savaşır.
+
+## 9.3. CENTER CITY
+
+<image-placeholder>Modern şehir merkezi ve yüksek binalar</image-placeholder>
+
+- Şehir merkezinde geçen bir haritadır.
+- Binalar, sokaklar ve şehir yapıları bulunur.
+- Şehir ortamında süper güçlerin kullanıldığı savaşlar gerçekleşir.
+
+## 9.4. VANCE SPIRE
+
+<image-placeholder>Çok yüksek modern iş merkezi gökdeleni</image-placeholder>
+
+- Çok yüksek bir iş binasından oluşur.
+- Binanın yalnızca 2 katı oynanabilir olacaktır.
+- Oyuncular binanın oynanabilir katlarında savaşır.
+- Yüksek katlı bir iş merkezi atmosferine sahiptir.
+
+## 9.5. DESTRUCTIBLE ENVIRONMENT
+
+RINGFALL haritaları yıkılabilir çevre sistemine sahip olacaktır.
+
+- Binalar ve çevresel yapılar yıkılabilir.
+- Oyuncuların saldırıları ve süper güçleri çevreyi etkileyebilir.
+- Yıkılan yapılar fizik kurallarına uygun şekilde hareket edebilir.
+- Çevrede fizik tabanlı etkileşimler bulunacaktır.
+
+Performans sorunlarını önlemek amacıyla yıkılan yapı parçalarının belirli bir süre sonra silinmesi değerlendirilmektedir.
+
+Yıkım sisteminin kapsamı ve teknik implementasyonu geliştirme sürecinde belirlenecektir.
+
+# 10. PHYSICS SYSTEM (FİZİK SİSTEMİ)
+
+RINGFALL'da fizik tabanlı etkileşimler önemli bir oynanış unsurudur.
+
+- Yıkılan yapılar fizik kurallarına göre hareket edebilir.
+- Oyuncuların saldırıları çevrede fiziksel etkiler oluşturabilir.
+- Yıkılan nesneler ve parçalar çevreyle etkileşime girebilir.
+- Süper güçlerin çevre üzerindeki etkileri desteklenecektir.
+
+Fizik sisteminin performans üzerindeki etkisi dikkate alınacaktır.
+
+# 11. MULTIPLAYER & LOBBY SYSTEM
+
+RINGFALL arkadaşlarla oynanmaya yönelik multiplayer bir oyundur.
+
+Oyuncuların kendi lobilerini oluşturabilmesi ve arkadaşlarını davet ederek birlikte maç oynayabilmesi hedeflenmektedir.
+
+Temel özellikler:
+- Lobi oluşturma.
+- Arkadaşlarla lobiye katılma.
+- Birlikte maç başlatma.
+- Oyun modunu seçme.
+- Villain karakterlerini seçme (Villain vs Villain modunda).
+
+Oyunun maksimum oyuncu kapasitesi 9'dur.
+
+İlk sürümde Ranked sistemi planlanmamaktadır. Öncelik arkadaşlarla oynanabilecek eğlenceli bir deneyim oluşturmaktır.
+
+# 12. UI/UX (USER INTERFACE)
+
+Oyunun kullanıcı arayüzünde bulunması planlanan temel ekranlar:
+
+- Main Menu
+- Lobby Screen
+- Game Mode Selection
+- Villain Selection
+- In-game HUD
+- Health Bar
+- Ability Icons
+- Cooldown Indicators
+- Ring Inventory
+- Item Inventory
+- Death Screen
+- Match Results Screen
+
+Arayüzün anlaşılır, sade ve oynanışı engellemeyecek şekilde tasarlanması hedeflenmektedir.
+
+# 13. AUDIO DESIGN (SES TASARIMI)
+
+Oyunda savaş atmosferini güçlendiren ses efektleri bulunacaktır.
+
+Planlanan ses kategorileri:
+
+- Basic Attack Sounds
+- Ability Sounds
+- Ultimate Sounds
+- Environmental Sounds
+- Destruction Sounds
+- UI Sounds
+- Background Music
+
+Özellikle Villain karakterlerinin yetenekleri ve ultimateleri kendilerine özgü ses efektlerine sahip olacaktır.
+
+# 14. COSMETICS & SKINS
+
+RINGFALL'da karakterlerin görünümünü değiştiren kozmetik içerikler bulunacaktır.
+
+Planlanan özellikler:
+
+- Villain Skins
+- Özel görsel efektler
+- Saldırı efektleri
+- Kill Sounds
+- Skinlere özel ses efektleri
+
+Bazı skinlerin sınırlı süreli olması ve tekrar satışa sunulmaması değerlendirilmektedir.
+
+Kozmetik içeriklerin temel savaş dengesini etkilememesi hedeflenmektedir.
+
+# 15. PROGRESSION & FUTURE CONTENT
+
+Oyunun ilerleyen dönemlerinde yeni içerikler eklenmesi planlanmaktadır.
+
+Olası güncellemeler:
+
+- Yeni Villain karakterleri.
+- Yeni haritalar.
+- Yeni yüzükler.
+- Yeni iksirler.
+- Yeni kozmetik içerikler.
+- Yeni savaş mekanikleri.
+- Yeni oyun modları.
+
+Güncellemelerle oyunun uzun süre oynanabilir kalması hedeflenmektedir.
+
+# 16. DEVELOPMENT ROADMAP
+
+RINGFALL'ın geliştirme sürecinde öncelik temel oynanış sistemlerinin tamamlanmasıdır.
+
+### Initial Early Access Goals
+
+- Temel multiplayer altyapısı.
+- Lobi sistemi.
+- Villain vs Humans modu.
+- Villain vs Villain modu.
+- Başlangıçta 5 Villain.
+- Temel savaş sistemi.
+- Yüzük sistemi.
+- Silah ve zehir sistemi.
+- Başlangıç haritaları.
+- Yıkılabilir çevre sistemi.
+- Temel UI/UX.
+- Ses efektleri.
+
+### Future Updates
+
+Early Access sonrasında oyuncu geri bildirimleri ve geliştirme kapasitesine göre yeni içerikler eklenmesi hedeflenmektedir.
+
+---
+
+# 17. GAME DESIGN PHILOSOPHY
+
+RINGFALL'ın temel amacı, oyunculara süper güçlerin kullanıldığı, fiziksel çevrenin etkilendiği ve her maçın farklı olaylara sahne olabildiği eğlenceli bir multiplayer deneyimi sunmaktır.
+
+Oyunun temel tasarım prensipleri:
+
+1. Eğlence ve tekrar oynanabilirlik.
+2. Farklı yeteneklere sahip Villain karakterleri.
+3. Asimetrik PvP savaşları.
+4. Doğrudan Villain vs Villain savaşları.
+5. Yüzüklerle güçlenen insan oyuncular.
+6. Yıkılabilir ve etkileşimli çevre.
+7. Arkadaşlarla kolayca oynanabilen multiplayer deneyimi.
+8. Hızlı ve dinamik maçlar.
+
+**RINGFALL — Choose Your Power. Survive the Fall.**
